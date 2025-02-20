@@ -72,66 +72,6 @@
             wren: { name: 'Wren', region: 'verdant', gear: { weapon: 'Lute of Shaft', armor: 'Evergreen Cloak', accessory: 'Fishhook Trap' }, abilities: ['Harmony Haste', 'Fishhook Trap'] },
             caseadilla: { name: 'Caseadilla', region: 'mistpeak', gear: { weapon: 'Thunderaxe', armor: 'Raincloak' }, abilities: ['Forest Tactics', 'Raincloak Stealth'] },
             sterguy: { name: 'Sterguy', region: 'emberforge', gear: { weapon: 'Molten Hammer', armor: 'Emberplate Armor' }, abilities: ['Forge Fury', 'Heat Hammer'] },
-            gamblinEddie: { name: 'Gamblin Eddie', region: 'ironclad', gear: { weapon: 'Smokesteel Dagger', accessory: 'Iron Dice' }, abilities: ['Lucky Gambit', 'Smoke Cloak'] },
+            gamblinEddie: { name: 'Gamblin Eddie', region: 'frostfang', gear: { weapon: 'Smokesteel Dagger', accessory: 'Iron Dice' }, abilities: ['Lucky Gambit', 'Smoke Cloak'] },
             taterSalad: { name: 'Tater_Salad', region: 'rootvale', gear: { weapon: 'Tater Targe', armor: 'Dirtcloak' }, abilities: ['Spud Shield', 'Harvest Haste'] },
             noodles: { name: 'Noodles', region: 'rolling', gear: { weapon: 'Cue of Shame', armor: 'Tattered Cloth' }, abilities: ['Swift Roll', 'Lucky Break'] },
-            chunks: { name: 'Chunks', region: 'frostfang', gear: { weapon: 'Frostbite Bow', armor: 'Snowbear Pelt' }, abilities: ['Icy Tracking', 'Frost Resilience'] }
-        };
-
-        // Pixel art for characters
-        function drawCharacterIcon(ctx, char, x, y) {
-            ctx.fillStyle = '#a68b5c';
-            ctx.fillRect(x, y, 16, 24); // Body
-            if (char.gear.weapon === 'Sunblade') ctx.fillStyle = '#ffd700'; // Gold for Sunblade
-            else if (char.gear.weapon === 'Lute of Shaft') ctx.fillStyle = '#d4a017'; // Brown for lute
-            else if (char.gear.weapon === 'Thunderaxe') ctx.fillStyle = '#808080'; // Gray for axe
-            else if (char.gear.weapon === 'Molten Hammer') ctx.fillStyle = '#ff4500'; // Red for hammer
-            else if (char.gear.weapon === 'Smokesteel Dagger') ctx.fillStyle = '#4a4a4a'; // Dark gray for dagger
-            else if (char.gear.weapon === 'Tater Targe') ctx.fillStyle = '#d2b48c'; // Brown for shield
-            else if (char.gear.weapon === 'Cue of Shame') ctx.fillStyle = '#808080'; // Gray for cue
-            else if (char.gear.weapon === 'Frostbite Bow') ctx.fillStyle = '#e0f0ff'; // Light blue for bow
-            ctx.fillRect(x + 8, y - 8, 8, 8); // Weapon/icon
-        }
-
-        // Draw character icons for selection
-        Object.keys(characters).forEach(char => {
-            const iconCanvas = document.getElementById(`${char}Icon`);
-            const iconCtx = iconCanvas.getContext('2d');
-            drawCharacterIcon(iconCtx, characters[char], 8, 8);
-        });
-
-        // Pixel art for items
-        const itemIcons = {
-            'Sunblade': { color: '#ffd700', shape: 'sword' },
-            'Marshscale Armor': { color: '#2f4f2f', shape: 'armor' },
-            'Lute of Shaft': { color: '#d4a017', shape: 'lute' },
-            'Evergreen Cloak': { color: '#228b22', shape: 'cloak' },
-            'Thunderaxe': { color: '#808080', shape: 'axe' },
-            'Raincloak': { color: '#808080', shape: 'cloak' },
-            'Molten Hammer': { color: '#ff4500', shape: 'hammer' },
-            'Emberplate Armor': { color: '#8b0000', shape: 'armor' },
-            'Smokesteel Dagger': { color: '#4a4a4a', shape: 'dagger' },
-            'Iron Dice': { color: '#ffd700', shape: 'dice' },
-            'Tater Targe': { color: '#d2b48c', shape: 'shield' },
-            'Dirtcloak': { color: '#8b4513', shape: 'cloak' },
-            'Cue of Shame': { color: '#808080', shape: 'cue' },
-            'Tattered Cloth': { color: '#a68b5c', shape: 'cloak' },
-            'Frostbite Bow': { color: '#e0f0ff', shape: 'bow' },
-            'Snowbear Pelt': { color: '#4a2f1a', shape: 'armor' },
-            'Stickball Sub': { color: '#d4a017', shape: 'sub' },
-            'Fried Fish': { color: '#d4a017', shape: 'fish' }
-        };
-
-        function drawItem(ctx, item, x, y) {
-            ctx.fillStyle = itemIcons[item]?.color || '#808080';
-            if (itemIcons[item]?.shape === 'sword') ctx.fillRect(x + 20, y + 10, 10, 30);
-            else if (itemIcons[item]?.shape === 'armor') ctx.fillRect(x + 15, y + 5, 20, 35);
-            else if (itemIcons[item]?.shape === 'lute') ctx.fillRect(x + 15, y + 15, 20, 20);
-            else if (itemIcons[item]?.shape === 'cloak') ctx.fillRect(x + 10, y + 10, 30, 25);
-            else if (itemIcons[item]?.shape === 'axe') ctx.fillRect(x + 20, y + 5, 10, 35);
-            else if (itemIcons[item]?.shape === 'hammer') ctx.fillRect(x + 20, y + 10, 10, 30);
-            else if (itemIcons[item]?.shape === 'dagger') ctx.fillRect(x + 22, y + 10, 6, 30);
-            else if (itemIcons[item]?.shape === 'dice') ctx.fillRect(x + 18, y + 15, 14, 14);
-            else if (itemIcons[item]?.shape === 'shield') ctx.fillRect(x + 15, y + 5, 20, 35);
-            else if (itemIcons[item]?.shape === 'cue') ctx.fillRect(x + 20, y + 10, 10, 30);
-            else if (itemIcons[item]?.shape === 'bow') ctx.fillRect(x + 15, y + 15,Sorry about that, something didn't go as planned. Please try again, and if you're still seeing this message, go ahead and restart the app.
